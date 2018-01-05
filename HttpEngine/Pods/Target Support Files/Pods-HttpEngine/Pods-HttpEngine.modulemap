@@ -1,0 +1,6 @@
+framework module Pods_HttpEngine {
+  umbrella header "Pods-HttpEngine-umbrella.h"
+
+  export *
+  module * { export * }
+}
