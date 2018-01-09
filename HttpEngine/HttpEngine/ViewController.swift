@@ -12,13 +12,14 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    let bean = ExampleRequestBean()
-    HttpEngine().request(bean, success: {
-       print("请求成功")
-    }, failure: { (error) in
-       print("请求失败")
-    }) {
-       print("请求完成")
+    let requestBean = ExampleRequestBean()
+    let responseBean = ExampleResponseBean()
+    HttpEngine().request(requestBean, responseBean: responseBean, success: { (response) in
+      print("请求成功")
+    }, failure: { error in
+      print("请求失败")
+    }) { 
+      print("请求完成")
     }
 
   }

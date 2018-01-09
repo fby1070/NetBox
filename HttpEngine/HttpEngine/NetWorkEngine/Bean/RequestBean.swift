@@ -8,16 +8,12 @@
 
 import Foundation
 
-enum HttpRequestMethod: String {
-  case Get = "GET"
-  case Post = "POST"
-}
 
 class RequestBean: RequestProtocol {
+  
   //通过配置文件来配置参数，需要一个启动文件，带有整体网络请求属性
-  var method: String { return HttpRequestMethod.Get.rawValue }
+  var method: NetMethod { return .GET }
   var requestUrl: String { return "/getUserInfo"}
-  var headers: [String : String] { return ["name" : "fubaoyang"] }
   var privateParameters: [String : Any] { return ["age" : "18"] }
   var timeoutForRequest: TimeInterval { return 0 }
   

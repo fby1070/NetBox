@@ -3,7 +3,7 @@
 //  Mauser
 //
 //  Created by BY_ido on 2017/12/20.
-//  Copyright © 2017年 BUBUKO. All rights reserved.
+//  Copyright © 2018年 SSFBY. All rights reserved.
 //
 
 import Alamofire
@@ -15,7 +15,7 @@ class AlamofireSimple: NSObject {
     self.sessionManager = SessionManager.default
   }
   
-  func request(method: HTTPTOOLMethod,
+  func request(method: NetMethod,
                urlStr: String,
                params: [String: AnyObject]? = nil,
                success: @escaping (DataResponse<Any>) -> (),

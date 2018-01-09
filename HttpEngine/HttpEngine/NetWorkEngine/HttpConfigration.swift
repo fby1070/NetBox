@@ -7,27 +7,47 @@
 //
 
 import Foundation
-//网络框架
-enum RequestHttpChannel {
-  case Almofire
+
+protocol HttpConfigProtocol {
+  
+  // 业务Bean请求时,需要传递到服务器的公共参数
+  var netRequestPublicParams: Dictionary<String, Any> { get }
+  
+  ///自定义的http headers
+  var customHttpHeaders: Dictionary<String, Any> { get }
+  
+  ///自定义的超时时间
+  var customTimeOut: TimeInterval? { get }
+  
+  ///从服务器返回的数据中, 获取 data 部分(真正的有效数据)
+  func getServerResponseDataValidityDataFunction(data: Dictionary<String, Any>) -> Any?
+  
+  // 打包post数据(可在这里进行数据的加密工作)
+  func postDataPackageFunction(paramsDictionary: Dictionary<String, Any>) -> Data?
 }
 
-//解析方式
-enum RequestHttpParse {
-  case JSON
-}
-//加密方式
-enum RequestHttpEncryption {
-  case MD5
-}
-
-class HttpConfigration {
+class HttpConfigration: HttpConfigProtocol {
+  var netRequestPublicParams: Dictionary<String, Any> {
+    return [:]
+  }
+  
+  var customHttpHeaders: Dictionary<String, Any> {
+    return [:]
+  }
+  
   static let httpConfigration = HttpConfigration()
-  var requestMainURL: String?
-  var header: [String:Any] = [:]
-  var publicPrameters: [String:Any] = [:]
-  var requestTimeout: TimeInterval = 60
-  var requestHttpChannel: RequestHttpChannel = .Almofire
-  var requestHttpParse: RequestHttpParse = .JSON
-  var requestHttpEncryption: RequestHttpEncryption? = nil
+  
+  var customTimeOut: TimeInterval? {
+    return 10
+  }
+  
+  func getServerResponseDataValidityDataFunction(data: Dictionary<String, Any>) -> Any? {
+    return nil
+  }
+  
+  func postDataPackageFunction(paramsDictionary: Dictionary<String, Any>) -> Data? {
+    return nil
+  }
+  
+
 }

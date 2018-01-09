@@ -8,11 +8,7 @@
 
 import Foundation
 
-typealias NetworkFailure = (_ error: RequestError) -> Void
-
 class HttpEngine {
-  let net = AlamofireSimple()
-  var networkFailure: NetworkFailure?
   var httpConfigration: HttpConfigration
   var networkEngine: NetworkEngine
   
@@ -33,25 +29,27 @@ class HttpEngine {
     //超时时间
     
     //获取公共参数
-    var prameters = httpConfigration.publicPrameters
+    var prameters = httpConfigration.netRequestPublicParams
+    
+    
     //拼接prameters
     for item in requestBean.privateParameters {
       prameters[item.key] = requestBean.privateParameters[item.key]
     }
     
-    let handle = net.request(method: .GET, urlStr: requestBean.requestUrl, params: prameters as [String : AnyObject], success: { reponse in
+    let handle = networkEngine.request(method: .GET, urlStr: requestBean.requestUrl, params: prameters as [String : AnyObject], success: { response in
       //解析成字典
-      let json = (try! JSONSerialization.jsonObject(with: reponse.result.value as! Data, options: .mutableContainers)) as! NSDictionary
-//      let dataDic = json["data"] as! [String : AnyObject]
-      var response: AnyObject?
+//      let json = (try! JSONSerialization.jsonObject(with: reponse.result.value as! Data, options: .mutableContainers)) as! NSDictionary
+      var responseBean: AnyObject?
       //解析模型
-//      response = responseBean.init(dic: dataDic)
-//      response = responseBean(dataDic)
-      guard response != nil else {
+
+      guard responseBean != nil else {
+        let error = ErrorBean.responseNone
+        failure(error)
         return
       }
 
-      success(response!)
+      success(responseBean!)
     }, failure: { (error) in
       
       failure(error)

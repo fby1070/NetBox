@@ -2,8 +2,8 @@
 //  Handle.swift
 //  Mauser
 //
-//  Created by BUBUKO on 2017/11/24.
-//  Copyright © 2017年 BUBUKO. All rights reserved.
+//  Created by BY_ido on 2017/12/20.
+//  Copyright © 2018年 SSFBY. All rights reserved.
 //
 
 import Foundation

@@ -7,7 +7,6 @@
 //
 
 protocol ResponseProtocol {
-
   
   func complete(requestBean:RequestBean)
 }

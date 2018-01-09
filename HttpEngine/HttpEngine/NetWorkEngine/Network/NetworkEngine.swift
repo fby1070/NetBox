@@ -6,7 +6,7 @@
 //  Copyright © 2017年 SSFBY. All rights reserved.
 //
 
-import UIKit
+
 
 class NetworkEngine: HttpProtocol {
   var alamofireSimple = AlamofireSimple()
@@ -14,7 +14,7 @@ class NetworkEngine: HttpProtocol {
     
   }
   
-  func request(method: HTTPTOOLMethod, urlStr: String, params: [String : AnyObject]?, success: @escaping () -> (), failure: @escaping (Error) -> (), completion: @escaping () -> ()) -> Handler {
+  func request(method: NetMethod, urlStr: String, params: [String : AnyObject]?, success: @escaping (Any) -> (), failure: @escaping (Error) -> (), completion: @escaping () -> ()) -> Handler {
     return alamofireSimple.request(method: method,
                                    urlStr: urlStr,
                                    params: params,

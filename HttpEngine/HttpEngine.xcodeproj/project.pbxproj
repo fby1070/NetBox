@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		16C7F31AE3CFA7D4F559E600 /* Pods_HttpEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE7D8F1C1205DA2A71EB2FE /* Pods_HttpEngine.framework */; };
+		8F4F858D20049F5A00FB362B /* NetWorkLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F858C20049F5A00FB362B /* NetWorkLine.swift */; };
+		8F4F858F2004A52000FB362B /* NetConfigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F858E2004A52000FB362B /* NetConfigration.swift */; };
 		8F62E1141FFB9E850076D194 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E1131FFB9E850076D194 /* BaseModel.swift */; };
 		8F62E1161FFCAEBD0076D194 /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E1151FFCAEBD0076D194 /* ResponseProtocol.swift */; };
 		8F62E11A1FFCB3AB0076D194 /* ExampleRequestBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E1181FFCB3AB0076D194 /* ExampleRequestBean.swift */; };
@@ -22,8 +24,7 @@
 		8FFEBBF21FEB95590064DBA8 /* HttpEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEBBF11FEB95590064DBA8 /* HttpEngineTests.swift */; };
 		8FFEBBFD1FEB95590064DBA8 /* HttpEngineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEBBFC1FEB95590064DBA8 /* HttpEngineUITests.swift */; };
 		8FFEBC0E1FEB96230064DBA8 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEBC0D1FEB96230064DBA8 /* RequestProtocol.swift */; };
-		8FFEBC111FEB989C0064DBA8 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEBC101FEB989C0064DBA8 /* RequestError.swift */; };
-		8FFEBC131FEB99BE0064DBA8 /* RequestErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEBC121FEB99BE0064DBA8 /* RequestErrorModel.swift */; };
+		8FFEBC111FEB989C0064DBA8 /* ErrorBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEBC101FEB989C0064DBA8 /* ErrorBean.swift */; };
 		8FFEBC171FEB9E000064DBA8 /* AlamofireSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEBC151FEB9E000064DBA8 /* AlamofireSimple.swift */; };
 		8FFEBC181FEB9E000064DBA8 /* HttpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEBC161FEB9E000064DBA8 /* HttpProtocol.swift */; };
 		8FFEBC1A1FEBA3D60064DBA8 /* HttpEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEBC191FEBA3D60064DBA8 /* HttpEngine.swift */; };
@@ -65,6 +66,8 @@
 /* Begin PBXFileReference section */
 		8A0B1F3560FE68CACDD9B9F2 /* Pods-HttpEngine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HttpEngine.release.xcconfig"; path = "Pods/Target Support Files/Pods-HttpEngine/Pods-HttpEngine.release.xcconfig"; sourceTree = "<group>"; };
 		8CC3AFBCEE08B9D8BE09E74D /* Pods-HttpEngine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HttpEngine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HttpEngine/Pods-HttpEngine.debug.xcconfig"; sourceTree = "<group>"; };
+		8F4F858C20049F5A00FB362B /* NetWorkLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkLine.swift; sourceTree = "<group>"; };
+		8F4F858E2004A52000FB362B /* NetConfigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetConfigration.swift; sourceTree = "<group>"; };
 		8F62E1131FFB9E850076D194 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		8F62E1151FFCAEBD0076D194 /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
 		8F62E1181FFCB3AB0076D194 /* ExampleRequestBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleRequestBean.swift; sourceTree = "<group>"; };
@@ -85,8 +88,7 @@
 		8FFEBBFC1FEB95590064DBA8 /* HttpEngineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpEngineUITests.swift; sourceTree = "<group>"; };
 		8FFEBBFE1FEB95590064DBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FFEBC0D1FEB96230064DBA8 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
-		8FFEBC101FEB989C0064DBA8 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
-		8FFEBC121FEB99BE0064DBA8 /* RequestErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestErrorModel.swift; sourceTree = "<group>"; };
+		8FFEBC101FEB989C0064DBA8 /* ErrorBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBean.swift; sourceTree = "<group>"; };
 		8FFEBC151FEB9E000064DBA8 /* AlamofireSimple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireSimple.swift; sourceTree = "<group>"; };
 		8FFEBC161FEB9E000064DBA8 /* HttpProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpProtocol.swift; sourceTree = "<group>"; };
 		8FFEBC191FEBA3D60064DBA8 /* HttpEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpEngine.swift; sourceTree = "<group>"; };
@@ -129,6 +131,15 @@
 				8A0B1F3560FE68CACDD9B9F2 /* Pods-HttpEngine.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8F4F858B20049F4C00FB362B /* Configration */ = {
+			isa = PBXGroup;
+			children = (
+				8F4F858C20049F5A00FB362B /* NetWorkLine.swift */,
+				8F4F858E2004A52000FB362B /* NetConfigration.swift */,
+			);
+			path = Configration;
 			sourceTree = "<group>";
 		};
 		8F62E1171FFCB3AB0076D194 /* Example */ = {
@@ -198,6 +209,7 @@
 		8FFEBC0A1FEB959F0064DBA8 /* NetWorkEngine */ = {
 			isa = PBXGroup;
 			children = (
+				8F4F858B20049F4C00FB362B /* Configration */,
 				8FFEBC141FEB9E000064DBA8 /* Network */,
 				8FFEBC0F1FEB988A0064DBA8 /* Tools */,
 				8FFEBC0C1FEB95DA0064DBA8 /* Bean */,
@@ -223,8 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				8FFEBC1B1FEBA8A20064DBA8 /* Handle.swift */,
-				8FFEBC101FEB989C0064DBA8 /* RequestError.swift */,
-				8FFEBC121FEB99BE0064DBA8 /* RequestErrorModel.swift */,
+				8FFEBC101FEB989C0064DBA8 /* ErrorBean.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -448,13 +459,14 @@
 				8F62E11D1FFCBBAF0076D194 /* HttpConfigration.swift in Sources */,
 				8FFEBC1C1FEBA8A20064DBA8 /* Handle.swift in Sources */,
 				8F62E1161FFCAEBD0076D194 /* ResponseProtocol.swift in Sources */,
-				8FFEBC111FEB989C0064DBA8 /* RequestError.swift in Sources */,
+				8FFEBC111FEB989C0064DBA8 /* ErrorBean.swift in Sources */,
 				8FFEBC0E1FEB96230064DBA8 /* RequestProtocol.swift in Sources */,
 				8F62E11A1FFCB3AB0076D194 /* ExampleRequestBean.swift in Sources */,
 				8FFEBBDF1FEB95580064DBA8 /* ViewController.swift in Sources */,
-				8FFEBC131FEB99BE0064DBA8 /* RequestErrorModel.swift in Sources */,
+				8F4F858F2004A52000FB362B /* NetConfigration.swift in Sources */,
 				8FFEBC1E1FEBA9890064DBA8 /* RequestBean.swift in Sources */,
 				8FFEBC171FEB9E000064DBA8 /* AlamofireSimple.swift in Sources */,
+				8F4F858D20049F5A00FB362B /* NetWorkLine.swift in Sources */,
 				8FFEBBDD1FEB95580064DBA8 /* AppDelegate.swift in Sources */,
 				8FEA6C291FFDD391001B5C52 /* ResponseBean.swift in Sources */,
 				8F62E11B1FFCB3AB0076D194 /* ExampleResponseBean.swift in Sources */,

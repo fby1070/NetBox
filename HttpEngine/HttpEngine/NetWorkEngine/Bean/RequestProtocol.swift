@@ -11,10 +11,8 @@ import Foundation
 
 protocol RequestProtocol {
   var requestUrl: String { get }
-  var method: String { get }
+  var method: NetMethod { get }
   var privateParameters: [String: Any] { get }
-  var headers: [String: String] { get }
   var timeoutForRequest: TimeInterval { get }
-
 }
 

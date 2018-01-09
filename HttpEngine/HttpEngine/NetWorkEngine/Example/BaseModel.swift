@@ -9,6 +9,10 @@ import Foundation
 import ObjectMapper
 
 class BaseModel:NSObject, ResponseProtocol, Mappable {
+  func complete(requestBean: RequestBean) {
+    
+  }
+  
   required init?(map: Map) {
     
   }

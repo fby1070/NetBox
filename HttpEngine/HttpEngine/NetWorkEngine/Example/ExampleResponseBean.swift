@@ -9,19 +9,16 @@
 import UIKit
 import ObjectMapper
 
-class ExampleResponseBean: ResponseBean, Mappable {
-  var name: String? = nil
-  var age: Int = 0
-  
+class ExampleResponseBean: ResponseBean {
 
   
-  required init?(map: Map) {
-    
-  }
+  var name: String? = nil
+  var age: Int = 0
+
   
-  func mapping(map: Map) {
-    name <- map["name"]
-    age <- map["age"]
-  }
+//  func mapping(map: Map) {
+//    name <- map["name"]
+//    age <- map["age"]
+//  }
   
 }

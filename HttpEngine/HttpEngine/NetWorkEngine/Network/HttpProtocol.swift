@@ -3,19 +3,19 @@
 //  Mauser
 //
 //  Created by BY_ido on 2017/12/20.
-//  Copyright © 2017年 BUBUKO. All rights reserved.
+//  Copyright © 2018年 SSFBY. All rights reserved.
 //
 
-enum HTTPTOOLMethod: String {
+enum NetMethod: String {
   case GET = "GET"
   case POST = "POST"
 }
 
 protocol HttpProtocol {
-  func request(method: HTTPTOOLMethod,
+  func request(method: NetMethod,
   urlStr: String,
   params: [String: AnyObject]?,
-  success: @escaping () -> (),
+  success: @escaping (Any) -> (),
   failure: @escaping (Error) -> (),
   completion: @escaping () -> ()) -> Handler
 }
