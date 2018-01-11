@@ -9,7 +9,6 @@
 class NetConfigration {
   static let netConfigration = NetConfigration()
   var httpEngine: HttpEngine
-  
   var netHelper: HttpConfigProtocol
   var netLine: NetWorkLineConfig
   init() {

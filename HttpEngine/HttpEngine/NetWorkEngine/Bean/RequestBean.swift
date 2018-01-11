@@ -8,10 +8,8 @@
 
 import Foundation
 
-
 class RequestBean: RequestProtocol {
   
-  //通过配置文件来配置参数，需要一个启动文件，带有整体网络请求属性
   var method: NetMethod { return .GET }
   var requestUrl: String { return "/getUserInfo"}
   var privateParameters: [String : Any] { return ["age" : "18"] }

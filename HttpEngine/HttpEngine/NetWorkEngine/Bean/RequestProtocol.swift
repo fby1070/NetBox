@@ -14,5 +14,7 @@ protocol RequestProtocol {
   var method: NetMethod { get }
   var privateParameters: [String: Any] { get }
   var timeoutForRequest: TimeInterval { get }
+  //参数检测
+  func ParameterValidation()
 }
 

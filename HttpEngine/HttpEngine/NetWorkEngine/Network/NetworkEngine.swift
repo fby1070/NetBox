@@ -10,9 +10,6 @@
 
 class NetworkEngine: HttpProtocol {
   var alamofireSimple = AlamofireSimple()
-  init() {
-    
-  }
   
   func request(method: NetMethod, urlStr: String, params: [String : Any]?, success: @escaping (Any) -> (), failure: @escaping (Error) -> (), completion: @escaping () -> ()) -> Handler {
     return alamofireSimple.request(method: method,
