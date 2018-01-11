@@ -8,27 +8,25 @@
 
 import Foundation
 
-// 网络错误枚举
 enum ErrorBean: Error {
   case jsonMapping
   case objectMapping(Swift.Error)
-  case responseNone                                   // 返回结果中没有httpurlresponse对象
-  case responseParseNil                          // 网络结果转为模型时失败，返回nil
+  case responseNone                                 // 返回结果中没有httpurlresponse对象
+  case responseParseNil                             // 网络结果转为模型时失败，返回nil
   case networkError(Error)                          // 引擎提供的错误
   case statusCode
   case parameterEncoding(Swift.Error)
   case underlying(Swift.Error)
   
 }
-// MARK: - Error Descriptions
 
 extension ErrorBean: LocalizedError {
   public var errorDescription: String? {
     switch self {
     case .jsonMapping:
-      return "Failed to map data to JSON."
+      return ""
     case .objectMapping:
-      return "Failed to map data to a Decodable object."
+      return ""
     case .responseNone:
       return ""
     case .responseParseNil:
@@ -36,9 +34,9 @@ extension ErrorBean: LocalizedError {
     case .networkError(let error):
       return error.localizedDescription
     case .statusCode:
-      return "Status code didn't fall within the given range."
+      return ""
     case .parameterEncoding(let error):
-      return "Failed to encode parameters for URLRequest. \(error.localizedDescription)"
+      return "错误 \(error.localizedDescription)"
     case .underlying(let error):
       return error.localizedDescription
     }

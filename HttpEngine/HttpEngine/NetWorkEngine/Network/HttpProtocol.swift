@@ -14,7 +14,7 @@ enum NetMethod: String {
 protocol HttpProtocol {
   func request(method: NetMethod,
   urlStr: String,
-  params: [String: AnyObject]?,
+  params: [String: Any]?,
   success: @escaping (Any) -> (),
   failure: @escaping (Error) -> (),
   completion: @escaping () -> ()) -> Handler

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     let requestBean = ExampleRequestBean()
     let responseBean = ExampleResponseBean()
-    HttpEngine().request(requestBean, responseBean: responseBean, success: { (response) in
+    NetConfigration().request(requestBean, responseBean: responseBean, success: { (response) in
       print("请求成功")
     }, failure: { error in
       print("请求失败")

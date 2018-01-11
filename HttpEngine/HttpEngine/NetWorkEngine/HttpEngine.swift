@@ -9,12 +9,14 @@
 import Foundation
 
 class HttpEngine {
-  var httpConfigration: HttpConfigration
+  var httpConfigration: HttpConfigProtocol
   var networkEngine: NetworkEngine
+  var mainUrl: String
   
-  init() {
-    httpConfigration = HttpConfigration()
-    networkEngine = NetworkEngine()
+  init(netHelper: HttpConfigProtocol, mainUrl: String) {
+    self.httpConfigration = netHelper
+    self.mainUrl = mainUrl
+    self.networkEngine = NetworkEngine()
   }
   
   
@@ -25,6 +27,7 @@ class HttpEngine {
     //验证requestBean是否为空
     
     //验证requestBean的URL，拼接URL
+    let url = self.mainUrl + requestBean.requestUrl
     
     //超时时间
     
@@ -37,7 +40,7 @@ class HttpEngine {
       prameters[item.key] = requestBean.privateParameters[item.key]
     }
     
-    let handle = networkEngine.request(method: .GET, urlStr: requestBean.requestUrl, params: prameters as [String : AnyObject], success: { response in
+    let handle = networkEngine.request(method: .GET, urlStr: url, params: requestBean.privateParameters, success: { response in
       //解析成字典
 //      let json = (try! JSONSerialization.jsonObject(with: reponse.result.value as! Data, options: .mutableContainers)) as! NSDictionary
       var responseBean: AnyObject?

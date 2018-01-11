@@ -8,7 +8,6 @@
 
 import Alamofire
 
-
 class AlamofireSimple: NSObject {
   fileprivate var sessionManager: Alamofire.SessionManager
   override init() {
@@ -17,13 +16,13 @@ class AlamofireSimple: NSObject {
   
   func request(method: NetMethod,
                urlStr: String,
-               params: [String: AnyObject]? = nil,
+               params: [String: Any]? = nil,
                success: @escaping (DataResponse<Any>) -> (),
                failure: @escaping (Error) -> (),
                completion: @escaping () -> ()) -> Handler{
     print("url======\(urlStr)")
-    print("url======\(method)")
-    print("url======\(String(describing: params))")
+    print("method======\(method)")
+    print("describing======\(String(describing: params))")
     if method == .GET {
       Alamofire.request(urlStr,
                         method: HTTPMethod.get,

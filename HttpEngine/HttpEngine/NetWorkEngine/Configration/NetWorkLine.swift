@@ -13,5 +13,20 @@ enum NetWorkLine {
   case Production(url: String)
 }
 
+class NetWorkLineConfig {
+  var baseUrl: String
+  init(line: NetWorkLine) {
+    switch line {
+    case NetWorkLine.InternalTest(let url):
+      baseUrl = url
+    case NetWorkLine.ExternalTest(let url):
+      baseUrl = url
+    case NetWorkLine.Production(let url):
+      baseUrl = url
+    }
+  }
+}
+
+
 
 

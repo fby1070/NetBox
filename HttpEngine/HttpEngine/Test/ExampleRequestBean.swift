@@ -11,14 +11,9 @@ import Foundation
 class ExampleRequestBean: RequestProtocol {
   
   var privateParameters: [String : Any] = [:]
-  var requestUrl: String { return "www.baidu.com"}
+  var requestUrl: String { return "/"}
   var method: NetMethod { return .GET}
   var parameters: [String : Any] { return ["area" : "101010100"] }
   var timeoutForRequest: TimeInterval {return 10}
   
-//  func formatClass() -> AnyObject {
-//    let response = ExampleResponseBean()
-//    return object_getClass(response)!
-//  }
-
 }
