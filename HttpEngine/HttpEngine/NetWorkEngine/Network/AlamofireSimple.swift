@@ -22,14 +22,15 @@ class AlamofireSimple: NSObject {
                completion: @escaping () -> ()) -> Handler{
     print("url======\(urlStr)")
     print("method======\(method)")
-    print("describing======\(String(describing: params))")
+    print("params======\(String(describing: params))")
     if method == .GET {
       Alamofire.request(urlStr,
-                        method: HTTPMethod.get,
+                        method: HTTPMethod.post,
                         parameters: params,
                         encoding: JSONEncoding.default)
         .responseJSON(completionHandler: { (response) in
           if response.result.isSuccess {
+            print("网络请求成功")
             success(response)
           } else {
             failure(response.result.error!)
@@ -43,6 +44,7 @@ class AlamofireSimple: NSObject {
         .responseJSON(completionHandler: { (response) in
           if response.result.isSuccess {
             success(response)
+            print("网络请求成功")
           } else {
             failure(response.result.error!)
           }

@@ -10,10 +10,8 @@ import Foundation
 
 class ExampleRequestBean: RequestProtocol {
   
-  var privateParameters: [String : Any] = [:]
-  var requestUrl: String { return "/"}
-  var method: NetMethod { return .GET}
-  var parameters: [String : Any] { return ["area" : "101010100"] }
-  var timeoutForRequest: TimeInterval {return 10}
+  var privateParameters: [String : Any] = ["userId":"592feba35660b9cce191ea7e"]
+  var requestUrl: String { return "/login"}
+  var method: NetMethod { return .POST}
   
 }

@@ -26,4 +26,26 @@ protocol HttpConfigProtocol {
   func postDataPackageFunction(paramsDictionary: Dictionary<String, Any>) -> Data?
 }
 
+extension HttpConfigProtocol {
+  var netRequestPublicParams: Dictionary<String, Any> {
+    return [:]
+  }
+  
+  var customHttpHeaders: Dictionary<String, Any> {
+    return [:]
+  }
+  
+  var customTimeOut: TimeInterval? {
+    return 60
+  }
+  
+  func getServerResponseDataValidityDataFunction(data: Dictionary<String, Any>) -> Any? {
+    return nil
+  }
+  
+  func postDataPackageFunction(paramsDictionary: Dictionary<String, Any>) -> Data? {
+    return nil
+  }
+}
+
 

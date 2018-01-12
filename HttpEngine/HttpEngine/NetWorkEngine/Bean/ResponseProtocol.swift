@@ -6,9 +6,17 @@
 //  Copyright © 2018年 SSFBY. All rights reserved.
 //
 
+// MARK: - 协议 ResponseProtocol
 protocol ResponseProtocol {
   
-  func complete(requestBean:RequestBean)
+  func complete(requestBean:RequestProtocol)
+}
+
+// MARK: - 扩展 ResponseProtocol
+extension ResponseProtocol{
+  func complete(requestBean:RequestProtocol) {
+    
+  }
 }
 
 

@@ -23,6 +23,8 @@ class HttpEngine {
   @discardableResult
   func request(_ requestBean: RequestProtocol, responseBean: ResponseProtocol, success: @escaping (AnyObject) -> (), failure: @escaping (Error) ->(), complete: @escaping () -> () ) -> Handler {
     //处理,检查requestBean
+    requestBean.ParameterValidation();
+    
 
     //验证requestBean是否为空
     
@@ -40,7 +42,7 @@ class HttpEngine {
       prameters[item.key] = requestBean.privateParameters[item.key]
     }
     
-    let handle = networkEngine.request(method: .GET, urlStr: url, params: requestBean.privateParameters, success: { response in
+    let handle = networkEngine.request(method: requestBean.method, urlStr: url, params: requestBean.privateParameters, success: { response in
       //解析成字典
 //      let json = (try! JSONSerialization.jsonObject(with: reponse.result.value as! Data, options: .mutableContainers)) as! NSDictionary
       var responseBean: AnyObject?

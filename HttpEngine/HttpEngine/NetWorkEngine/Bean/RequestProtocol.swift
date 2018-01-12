@@ -18,3 +18,25 @@ protocol RequestProtocol {
   func ParameterValidation()
 }
 
+// MARK: - 扩展 RequestProtocol
+extension RequestProtocol {
+  var requestUrl: String {
+    return "/login"
+  }
+  var method: NetMethod {
+    return .GET
+  }
+  
+  var privateParameters: [String: Any] {
+    return ["userId":"592feba35660b9cce191ea7e"]
+  }
+  
+  var timeoutForRequest: TimeInterval {
+    return 60
+  }
+  
+  func ParameterValidation() {
+    
+  }
+}
+
