@@ -12,6 +12,4 @@ class ExampleResponseBean: ResponseProtocol {
 
   var name: String? = nil
   var age: Int = 0
-
-  
 }

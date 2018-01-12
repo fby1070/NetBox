@@ -14,8 +14,13 @@ protocol RequestProtocol {
   var method: NetMethod { get }
   var privateParameters: [String: Any] { get }
   var timeoutForRequest: TimeInterval { get }
-  //参数检测
-  func ParameterValidation()
+
+  /**
+   * 将NetRequestDomainBean(网络请求业务Bean), 解析成发往服务器的数据字典(key要跟服务器定义的接口协议对应, value可以在这里进行二次处理, 比如密码的md5加密)
+   * @return 解析业务Bean
+   */
+  func parseNetRequestBeanToDataDictionary() -> Dictionary<String, Any>
+
 }
 
 // MARK: - 扩展 RequestProtocol
@@ -23,20 +28,18 @@ extension RequestProtocol {
   var requestUrl: String {
     return "/login"
   }
+  
   var method: NetMethod {
     return .GET
   }
   
   var privateParameters: [String: Any] {
-    return ["userId":"592feba35660b9cce191ea7e"]
+    return [:]
   }
   
   var timeoutForRequest: TimeInterval {
     return 60
   }
-  
-  func ParameterValidation() {
-    
-  }
+
 }
 

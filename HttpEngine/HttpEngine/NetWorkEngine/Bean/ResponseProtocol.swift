@@ -8,7 +8,7 @@
 
 // MARK: - 协议 ResponseProtocol
 protocol ResponseProtocol {
-  
+  func isNetRespondBeanValidity() -> Bool
   func complete(requestBean:RequestProtocol)
 }
 
