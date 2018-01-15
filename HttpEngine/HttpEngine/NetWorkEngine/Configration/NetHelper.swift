@@ -60,11 +60,12 @@ extension HttpConfigProtocol {
   }
   
   func netResponseDataToDictionary(responseData: Data) -> Dictionary<String, Any>? {
-    let dictionary: Dictionary? = NSKeyedUnarchiver.unarchiveObject(with: responseData) as? [String : Any]
-    if let dictionary = dictionary  {
-      return dictionary
+    do {
+      let json = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+      return json as? Dictionary<String, Any>
+    } catch _ {
+      return nil
     }
-    return nil
   }
 }
 

@@ -16,6 +16,6 @@ class ExampleRequestBean: RequestProtocol {
   
   var privateParameters: [String : Any] = ["phone":"15094501070"]
   var requestUrl: String { return "/postmancode"}
-  var method: NetMethod { return .POST}
+  var method: NetMethod { return .GET}
   
 }
