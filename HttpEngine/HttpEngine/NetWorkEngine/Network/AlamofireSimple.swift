@@ -17,12 +17,17 @@ class AlamofireSimple: NSObject {
   func request(method: NetMethod,
                urlStr: String,
                params: [String: Any]? = nil,
-               success: @escaping (DataResponse<Any>) -> (),
+               timeout: TimeInterval,
+               success: @escaping (Data?) -> (),
                failure: @escaping (Error) -> (),
                completion: @escaping () -> ()) -> Handler{
     print("url======\(urlStr)")
     print("method======\(method)")
     print("params======\(String(describing: params))")
+    
+    //设置超时时间
+    self.sessionManager.session.configuration.timeoutIntervalForRequest = timeout
+    
     if method == .GET {
       Alamofire.request(urlStr,
                         method: HTTPMethod.post,
@@ -31,7 +36,7 @@ class AlamofireSimple: NSObject {
         .responseJSON(completionHandler: { (response) in
           if response.result.isSuccess {
             print("网络请求成功")
-            success(response)
+            success(response.data)
           } else {
             failure(response.result.error!)
           }
@@ -43,7 +48,7 @@ class AlamofireSimple: NSObject {
                         encoding: JSONEncoding.default)
         .responseJSON(completionHandler: { (response) in
           if response.result.isSuccess {
-            success(response)
+            success(response.data)
             print("网络请求成功")
           } else {
             failure(response.result.error!)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16C7F31AE3CFA7D4F559E600 /* Pods_HttpEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE7D8F1C1205DA2A71EB2FE /* Pods_HttpEngine.framework */; };
+		8F42D9FE200C87B200ED1BB4 /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F42D9FD200C87B200ED1BB4 /* ExampleModel.swift */; };
 		8F4F858D20049F5A00FB362B /* NetWorkLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F858C20049F5A00FB362B /* NetWorkLine.swift */; };
 		8F4F858F2004A52000FB362B /* NetConfigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F858E2004A52000FB362B /* NetConfigration.swift */; };
 		8F62E1161FFCAEBD0076D194 /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E1151FFCAEBD0076D194 /* ResponseProtocol.swift */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		8A0B1F3560FE68CACDD9B9F2 /* Pods-HttpEngine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HttpEngine.release.xcconfig"; path = "Pods/Target Support Files/Pods-HttpEngine/Pods-HttpEngine.release.xcconfig"; sourceTree = "<group>"; };
 		8CC3AFBCEE08B9D8BE09E74D /* Pods-HttpEngine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HttpEngine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HttpEngine/Pods-HttpEngine.debug.xcconfig"; sourceTree = "<group>"; };
+		8F42D9FD200C87B200ED1BB4 /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
 		8F4F858C20049F5A00FB362B /* NetWorkLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkLine.swift; sourceTree = "<group>"; };
 		8F4F858E2004A52000FB362B /* NetConfigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetConfigration.swift; sourceTree = "<group>"; };
 		8F62E1151FFCAEBD0076D194 /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				8F4F858E2004A52000FB362B /* NetConfigration.swift */,
 				8F62E1181FFCB3AB0076D194 /* ExampleRequestBean.swift */,
 				8F62E1191FFCB3AB0076D194 /* ExampleResponseBean.swift */,
+				8F42D9FD200C87B200ED1BB4 /* ExampleModel.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			files = (
 				8FFEBC201FEBAD280064DBA8 /* NetworkEngine.swift in Sources */,
 				8FFEBC181FEB9E000064DBA8 /* HttpProtocol.swift in Sources */,
+				8F42D9FE200C87B200ED1BB4 /* ExampleModel.swift in Sources */,
 				8FFEBC1A1FEBA3D60064DBA8 /* HttpEngine.swift in Sources */,
 				8F62E11D1FFCBBAF0076D194 /* NetHelper.swift in Sources */,
 				8FFEBC1C1FEBA8A20064DBA8 /* Handle.swift in Sources */,

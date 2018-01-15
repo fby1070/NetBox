@@ -24,6 +24,10 @@ protocol HttpConfigProtocol {
   
   ///打包post数据(可在这里进行数据的加密工作)
   func postDataPackageFunction(paramsDictionary: Dictionary<String, Any>) -> Data?
+  
+  func unpackNetResponseRawEntityDataToUTF8String(responseData: Data) -> String
+  
+  func netResponseDataToDictionary(responseData: Data) -> Dictionary<String, Any>?
 }
 
 extension HttpConfigProtocol {
@@ -44,6 +48,22 @@ extension HttpConfigProtocol {
   }
   
   func postDataPackageFunction(paramsDictionary: Dictionary<String, Any>) -> Data? {
+    return nil
+  }
+  
+  func unpackNetResponseRawEntityDataToUTF8String(responseData: Data) -> String {
+    let stringOfUTF8 = String(data:responseData, encoding: String.Encoding.utf8) as String!
+    guard stringOfUTF8 != nil else {
+      return ""
+    }
+    return stringOfUTF8!
+  }
+  
+  func netResponseDataToDictionary(responseData: Data) -> Dictionary<String, Any>? {
+    let dictionary: Dictionary? = NSKeyedUnarchiver.unarchiveObject(with: responseData) as? [String : Any]
+    if let dictionary = dictionary  {
+      return dictionary
+    }
     return nil
   }
 }

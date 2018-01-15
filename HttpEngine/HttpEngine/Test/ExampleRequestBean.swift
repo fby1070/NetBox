@@ -9,9 +9,13 @@
 import Foundation
 
 class ExampleRequestBean: RequestProtocol {
+  func parseNetRequestBeanToDataDictionary() -> Dictionary<String, Any> {
+    return ["userId":"592feba35660b9cce191ea7e"]
+  }
   
-  var privateParameters: [String : Any] = ["userId":"592feba35660b9cce191ea7e"]
-  var requestUrl: String { return "/login"}
+  
+  var privateParameters: [String : Any] = ["phone":"15094501070"]
+  var requestUrl: String { return "/postmancode"}
   var method: NetMethod { return .POST}
   
 }

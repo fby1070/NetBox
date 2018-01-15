@@ -6,6 +6,8 @@
 //  Copyright © 2018年 SSFBY. All rights reserved.
 //
 
+import Foundation
+
 enum NetMethod: String {
   case GET = "GET"
   case POST = "POST"
@@ -15,7 +17,8 @@ protocol HttpProtocol {
   func request(method: NetMethod,
   urlStr: String,
   params: [String: Any]?,
-  success: @escaping (Any) -> (),
+  timeout: TimeInterval,
+  success: @escaping (Data?) -> (),
   failure: @escaping (Error) -> (),
   completion: @escaping () -> ()) -> Handler
 }

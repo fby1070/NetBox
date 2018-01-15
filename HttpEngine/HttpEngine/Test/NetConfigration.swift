@@ -13,7 +13,7 @@ class NetConfigration {
   var netLine: NetWorkLineConfig
   init() {
     netHelper = ExampleHelper()
-    netLine = NetWorkLineConfig(line: NetWorkLine.InternalTest(url: "http://192.168.2.29:8091"))
+    netLine = NetWorkLineConfig(line: NetWorkLine.InternalTest(url: "http://192.168.2.29:3011"))
     httpEngine = HttpEngine(netHelper: netHelper, mainUrl: netLine.baseUrl)
   }
   

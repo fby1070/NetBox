@@ -9,6 +9,10 @@
 import UIKit
 
 class ExampleResponseBean: ResponseProtocol {
+  func isNetRespondBeanValidity() -> Bool {
+    return true
+  }
+  
 
   var name: String? = nil
   var age: Int = 0
